@@ -80,7 +80,27 @@ background:#0a7d37;
 .add-btn:hover{
 background:#06612a;
 }
+.multi-select-box{
+border:1px solid #ccc;
+border-radius:6px;
+padding:10px;
+margin-top:10px;
+background:white;
+max-height:180px;
+overflow-y:auto;
+}
 
+.multi-select-box label{
+display:block;
+margin-top:8px;
+cursor:pointer;
+font-size:14px;
+}
+
+.multi-select-box input{
+width:auto;
+margin-right:8px;
+}
 /* SAVED BOX */
 
 .saved-box{
@@ -263,7 +283,25 @@ box-shadow:none;
 <input type="email" id="email" placeholder="Email Address">
 
 <input type="text" id="address" placeholder="Address">
+<!-- LANGUAGE -->
 
+<h3>Languages</h3>
+
+<div class="multi-select-box">
+
+<label><input type="checkbox" class="languageCheck" value="Hindi"> Hindi</label>
+
+<label><input type="checkbox" class="languageCheck" value="English"> English</label>
+
+<label><input type="checkbox" class="languageCheck" value="Urdu"> Urdu</label>
+
+<label><input type="checkbox" class="languageCheck" value="Punjabi"> Punjabi</label>
+
+<label><input type="checkbox" class="languageCheck" value="Gujarati"> Gujarati</label>
+
+<label><input type="checkbox" class="languageCheck" value="Marathi"> Marathi</label>
+
+</div>
 <!-- CAREER -->
 
 <h3>Career Objective</h3>
@@ -593,11 +631,20 @@ CONTACT
 <p id="showAddress"></p>
 
 </div>
+<div class="section" id="languageSection">
+
+<div class="title">
+LANGUAGE
+</div>
+
+<ul id="showLanguage"></ul>
+
+</div>
 
 <div class="section" id="skillSection">
 
 <div class="title">
-SKILLS
+    SKILLS
 </div>
 
 <ul id="showSkills"></ul>
@@ -688,6 +735,9 @@ gender:gender.value,
 phone:phone.value,
 email:email.value,
 address:address.value,
+languages:Array.from(
+document.querySelectorAll(".languageCheck:checked")
+).map(cb=>cb.value),
 
 careerSelect:careerSelect.value,
 customCareer:customCareer.value,
@@ -728,6 +778,17 @@ gender.value=data.gender || "";
 phone.value=data.phone || "";
 email.value=data.email || "";
 address.value=data.address || "";
+if(data.languages){
+
+document.querySelectorAll(".languageCheck")
+.forEach(function(cb){
+
+cb.checked =
+data.languages.includes(cb.value);
+
+});
+
+}
 
 careerSelect.value=data.careerSelect || "";
 customCareer.value=data.customCareer || "";
@@ -1285,6 +1346,19 @@ showExperience.innerHTML=
 savedExperience.innerHTML
 .replace(/<button class="delete-btn".*?<\/button>/g,'');
 
+/* LANGUAGE */
+
+let languageHTML="";
+
+document.querySelectorAll(".languageCheck:checked")
+.forEach(function(lang){
+
+languageHTML +=
+`<li>${lang.value}</li>`;
+
+});
+
+showLanguage.innerHTML=languageHTML;
 /* SKILLS */
 
 let skillHTML="";
@@ -1315,6 +1389,10 @@ showOther.innerHTML.trim()
 
 experienceSection.style.display=
 showExperience.innerHTML.trim()
+?"block":"none";
+
+languageSection.style.display=
+languageHTML.trim()
 ?"block":"none";
 
 skillSection.style.display=
