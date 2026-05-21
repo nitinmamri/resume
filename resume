@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Resume Builder</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#dcdcdc;
+padding:20px;
+}
+
+.form-container{
+width:850px;
+max-width:100%;
+background:white;
+margin:auto;
+padding:25px;
+border-radius:12px;
+box-shadow:0 0 15px rgba(0,0,0,0.2);
+}
+
+.form-container h2{
+text-align:center;
+margin-bottom:20px;
+color:#1d3557;
+font-size:32px;
+}
+
+h3{
+margin-top:25px;
+color:#1d3557;
+}
+
+input,
+textarea,
+select{
+width:100%;
+padding:11px;
+margin-top:10px;
+border:1px solid #ccc;
+border-radius:6px;
+font-size:15px;
+}
+
+textarea{
+resize:none;
+height:90px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:12px;
+border:none;
+background:#1d3557;
+color:white;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+}
+
+button:hover{
+background:#12263f;
+}
+
+.add-btn{
+background:#0a7d37;
+}
+
+.add-btn:hover{
+background:#06612a;
+}
+
+/* SAVED BOX */
+
+.saved-box{
+background:white;
+padding:2px;
+border-radius:10px;
+margin-top:10px;
+border-left:5px solid #1d3557;
+box-shadow:0 3px 10px rgba(0,0,0,0.08);
+position:relative;
+}
+
+.saved-box b{
+color:#1d3557;
+font-size:16px;
+}
+
+.saved-box p{
+margin-top:4px;
+font-size:14px;
+line-height:22px;
+}
+
+.delete-btn{
+position:absolute;
+top:10px;
+right:10px;
+background:red;
+color:white;
+border:none;
+padding:4px 10px;
+border-radius:4px;
+font-size:12px;
+cursor:pointer;
+width:auto;
+margin:0;
+}
+
+/* RESUME */
+
+.resume{
+width:794px;
+min-height:1123px;
+background:white;
+margin:20px auto;
+display:none;
+box-shadow:0 0 15px rgba(0,0,0,0.25);
+overflow:hidden;
+}
+
+.left{
+width:32%;
+background:#f1f3f6;
+float:left;
+min-height:1123px;
+padding:25px;
+}
+
+.right{
+width:68%;
+float:left;
+padding:35px;
+}
+
+.cv-title{
+text-align:center;
+font-size:23px;
+font-weight:800;
+color:#1d3557;
+letter-spacing:3px;
+margin-bottom:20px;
+border-bottom:4px solid #1d3557;
+padding-bottom:10px;
+}
+
+.profile{
+width:170px;
+height:170px;
+border-radius:50%;
+border:6px solid #1d3557;
+object-fit:cover;
+display:block;
+margin:auto;
+}
+
+.name{
+font-size:38px;
+color:#1d3557;
+font-weight:900;
+margin-bottom:20px;
+text-transform:uppercase;
+}
+
+.section{
+margin-top:22px;
+}
+
+.title{
+background:#1d3557;
+color:white;
+padding:10px;
+font-size:17px;
+margin-bottom:12px;
+border-radius:5px;
+}
+
+p,li{
+font-size:14px;
+line-height:24px;
+}
+
+ul{
+padding-left:20px;
+}
+
+.clear{
+clear:both;
+}
+
+/* PRINT */
+
+@media print{
+
+body{
+background:white;
+padding:0;
+}
+
+.form-container,
+#printBtn,
+#generateBtn{
+display:none !important;
+}
+
+.delete-btn{
+display:none !important;
+}
+
+.resume{
+display:block !important;
+width:210mm;
+min-height:297mm;
+margin:0 auto;
+box-shadow:none;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h2>Professional Resume Builder</h2>
+
+<input type="text" id="name" placeholder="Full Name">
+
+<input type="text" id="father" placeholder="Father Name">
+
+<input type="text" id="mother" placeholder="Mother Name">
+
+<input type="date" id="dob">
+
+<select id="gender">
+
+<option value="">Select Gender</option>
+
+<option>Male</option>
+
+<option>Female</option>
+
+<option>Other</option>
+
+</select>
+
+<input type="text" id="phone" placeholder="Phone Number">
+
+<input type="email" id="email" placeholder="Email Address">
+
+<input type="text" id="address" placeholder="Address">
+
+<!-- CAREER -->
+
+<h3>Career Objective</h3>
+
+<select id="careerSelect">
+
+<option value="">Select Career Objective</option>
+
+<option>
+To work in a responsible position where I can utilize my commerce knowledge, accounting skills, computer proficiency, and communication abilities for the growth of the organization while continuously improving my professional skills.
+</option>
+
+<option>
+Seeking a responsible career opportunity to fully utilize my training and skills while making a significant contribution to the success of the company.
+</option>
+
+<option>
+To work in a professional environment that encourages continuous learning, innovation, and career growth.
+</option>
+
+<option>
+A highly motivated individual seeking a position where I can contribute effectively and grow professionally through dedication and hard work.
+</option>
+
+<option>
+To be associated with an organization that provides opportunities to enhance my abilities and achieve professional excellence.
+</option>
+
+<option>
+Seeking a position in a dynamic organization where I can apply my technical and interpersonal skills to achieve organizational objectives.
+</option>
+
+<option>
+To secure a professional position that offers challenges, growth opportunities, and a chance to contribute positively to the organization.
+</option>
+
+<option>
+Looking for a growth-oriented career in a reputed organization where I can improve my knowledge and deliver quality performance.
+</option>
+
+<option>
+To work with a progressive organization that provides opportunities to enhance my professional and technical skills.
+</option>
+
+<option>
+Seeking an opportunity to work in a competitive and professional environment where I can contribute to organizational success.
+</option>
+
+<option>
+To build a successful career by working in a challenging environment that encourages creativity, teamwork, and professional development.
+</option>
+
+<option>
+Aiming to achieve a challenging position in an organization where I can utilize my potential and contribute to long-term growth.
+</option>
+
+<option>
+To pursue a challenging career in a reputable organization that offers opportunities for learning and advancement.
+</option>
+
+<option>
+Seeking a position where I can effectively apply my analytical, communication, and problem-solving skills for organizational benefit.
+</option>
+
+<option>
+To contribute my best abilities and dedication towards achieving company goals while continuously improving my professional skills.
+</option>
+
+<option>
+Looking for an opportunity to work in an innovative and growth-driven organization that values dedication and performance.
+</option>
+
+<option>
+To work in a professionally managed organization where I can utilize my abilities efficiently and contribute to overall success.
+</option>
+
+<option>
+Seeking a rewarding career opportunity that allows me to learn, grow, and contribute effectively to the organization.
+</option>
+
+<option>
+To obtain a position that enables me to apply my knowledge and skills while gaining valuable professional experience.
+</option>
+
+<option>
+Dedicated and hardworking individual seeking a position to contribute positively and achieve organizational excellence.
+</option>
+
+<option value="other">Other</option>
+
+</select>
+
+<textarea id="customCareer"
+placeholder="Write Your Career Objective"
+style="display:none;"></textarea>
+
+<!-- EDUCATION -->
+
+<h3>Education</h3>
+
+<select id="eduType">
+
+<option value="">Select Education</option>
+
+<option value="10th">10th</option>
+
+<option value="12th">12th</option>
+
+<option value="graduation">Graduation/Other</option>
+
+</select>
+
+<div id="educationFields"></div>
+
+<button type="button"
+class="add-btn"
+onclick="saveEducation()">
+
++ Add Education
+
+</button>
+
+<div id="savedEducation"></div>
+
+<!-- OTHER QUALIFICATION -->
+
+<h3>Other Qualification</h3>
+
+<select id="otherCourse">
+
+<option value="">Select Course</option>
+
+<option>CCC</option>
+
+<option>ADCA</option>
+
+<option>ITI</option>
+
+<option>Polytechnic</option>
+
+<option>DCA</option>
+
+<option value="other">Other</option>
+
+</select>
+
+<input type="text"
+id="customCourse"
+placeholder="Write Course Name"
+style="display:none;">
+
+<input type="text"
+id="otherInstitute"
+placeholder="Institute / Sanstha Name">
+
+<input type="number"
+id="otherYear"
+placeholder="Passing Year">
+
+<button type="button"
+class="add-btn"
+onclick="saveOtherQualification()">
+
++ Add Qualification
+
+</button>
+
+<div id="savedOther"></div>
+
+<!-- SKILLS -->
+
+<h3>Skills</h3>
+
+<select id="skillSelect">
+
+<option value="">Select Skill</option>
+
+<option>Computer Knowledge</option>
+
+<option>MS Office</option>
+
+<option>Communication Skill</option>
+
+<option>Typing</option>
+
+<option>Leadership</option>
+
+<option value="other">Other</option>
+
+</select>
+
+<input type="text"
+id="customSkill"
+placeholder="Write Skill"
+style="display:none;">
+
+<button type="button"
+class="add-btn"
+onclick="saveSkill()">
+
++ Add Skill
+
+</button>
+
+<div id="savedSkills"></div>
+
+<!-- EXPERIENCE -->
+
+<h3>Experience</h3>
+
+<select id="experienceSelect">
+
+<option value="">Select Experience</option>
+
+<option>Fresher</option>
+
+<option>1 Year Experience</option>
+
+<option>2 Year Experience</option>
+
+<option>3 Year Experience</option>
+
+<option value="other">Other</option>
+
+</select>
+
+<input type="text"
+id="customExperience"
+placeholder="Write Experience"
+style="display:none;">
+
+<button type="button"
+class="add-btn"
+onclick="saveExperience()">
+
++ Add Experience
+
+</button>
+
+<div id="savedExperience"></div>
+
+<!-- DECLARATION -->
+
+<h3>Declaration</h3>
+
+<select id="declarationSelect">
+
+<option value="">Select Declaration</option>
+
+<option>
+I hereby declare that all the information provided above is true and correct to the best of my knowledge and belief.
+</option>
+
+<option>
+I solemnly declare that the details furnished by me in this resume are true and accurate to the best of my knowledge.
+</option>
+
+<option>
+I hereby confirm that the above information is genuine and I take full responsibility for its correctness.
+</option>
+
+<option value="other">Other</option>
+
+</select>
+
+<textarea id="customDeclaration"
+placeholder="Write Your Own Declaration"
+style="display:none;"></textarea>
+
+<input type="file" id="image">
+
+<button id="generateBtn"
+onclick="generateResume()">
+
+Generate Resume
+
+</button>
+
+<button id="printBtn"
+onclick="printResume()"
+style="display:none;">
+
+Print Resume
+
+</button>
+
+</div>
+
+<!-- RESUME -->
+
+<div class="resume" id="resume">
+
+<div class="cv-title">
+CURRICULUM VITAE
+</div>
+
+<div class="left">
+
+<img id="showImage" class="profile">
+
+<div class="section">
+
+<div class="title">
+PERSONAL DETAILS
+</div>
+
+<p><b>Father :</b> <span id="showFather"></span></p>
+
+<p><b>Mother :</b> <span id="showMother"></span></p>
+
+<p><b>DOB :</b> <span id="showDob"></span></p>
+
+<p><b>Gender :</b> <span id="showGender"></span></p>
+
+</div>
+
+<div class="section">
+
+<div class="title">
+CONTACT
+</div>
+<b>Mobile :</b><br>
+<p id="showPhone"></p>
+<b>Mail :</b><br>
+<p id="showEmail"></p>
+<b>Address :</b><br>
+<p id="showAddress"></p>
+
+</div>
+
+<div class="section" id="skillSection">
+
+<div class="title">
+SKILLS
+</div>
+
+<ul id="showSkills"></ul>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="name" id="showName"></div>
+
+<div class="section" id="careerSection">
+
+<div class="title">
+CAREER OBJECTIVE
+</div>
+
+<p id="showCareer"></p>
+
+</div>
+
+<div class="section" id="educationSection">
+
+<div class="title">
+EDUCATION
+</div>
+
+<div id="showEducation"></div>
+
+</div>
+
+<div class="section" id="otherSection">
+
+<div class="title">
+OTHER QUALIFICATION
+</div>
+
+<div id="showOther"></div>
+
+</div>
+
+<div class="section" id="experienceSection">
+
+<div class="title">
+EXPERIENCE
+</div>
+
+<div id="showExperience"></div>
+
+</div>
+
+<div class="section" id="declarationSection">
+
+<div class="title">
+DECLARATION
+</div>
+
+<p id="showDeclaration"></p>
+
+<br><br>
+
+<p style="text-align:right;">
+<b id="showSignature"></b>
+</p>
+
+</div>
+
+</div>
+
+<div class="clear"></div>
+
+</div>
+
+<script>
+
+/* AUTO SAVE */
+
+function autoSave(){
+
+let formData={
+
+name:name.value,
+father:father.value,
+mother:mother.value,
+dob:dob.value,
+gender:gender.value,
+phone:phone.value,
+email:email.value,
+address:address.value,
+
+careerSelect:careerSelect.value,
+customCareer:customCareer.value,
+
+savedEducation:savedEducation.innerHTML,
+savedOther:savedOther.innerHTML,
+savedSkills:savedSkills.innerHTML,
+savedExperience:savedExperience.innerHTML,
+
+declarationSelect:declarationSelect.value,
+customDeclaration:customDeclaration.value
+
+};
+
+localStorage.setItem(
+"resumeFormData",
+JSON.stringify(formData)
+);
+
+}
+
+/* LOAD SAVE */
+
+window.onload=function(){
+
+let savedData=
+localStorage.getItem("resumeFormData");
+
+if(savedData){
+
+let data=JSON.parse(savedData);
+
+name.value=data.name || "";
+father.value=data.father || "";
+mother.value=data.mother || "";
+dob.value=data.dob || "";
+gender.value=data.gender || "";
+phone.value=data.phone || "";
+email.value=data.email || "";
+address.value=data.address || "";
+
+careerSelect.value=data.careerSelect || "";
+customCareer.value=data.customCareer || "";
+
+declarationSelect.value=data.declarationSelect || "";
+customDeclaration.value=data.customDeclaration || "";
+
+savedEducation.innerHTML=data.savedEducation || "";
+savedOther.innerHTML=data.savedOther || "";
+savedSkills.innerHTML=data.savedSkills || "";
+savedExperience.innerHTML=data.savedExperience || "";
+
+if(careerSelect.value=="other"){
+customCareer.style.display="block";
+}
+
+if(declarationSelect.value=="other"){
+customDeclaration.style.display="block";
+}
+
+}
+
+};
+
+/* AUTO SAVE EVENTS */
+
+document.addEventListener(
+"input",
+autoSave
+);
+
+document.addEventListener(
+"change",
+autoSave
+);
+
+/* DROPDOWN */
+
+careerSelect.onchange=function(){
+
+customCareer.style.display=
+this.value=="other"
+?"block":"none";
+
+};
+
+skillSelect.onchange=function(){
+
+customSkill.style.display=
+this.value=="other"
+?"block":"none";
+
+};
+
+experienceSelect.onchange=function(){
+
+customExperience.style.display=
+this.value=="other"
+?"block":"none";
+
+};
+
+otherCourse.onchange=function(){
+
+customCourse.style.display=
+this.value=="other"
+?"block":"none";
+
+};
+
+declarationSelect.onchange=function(){
+
+customDeclaration.style.display=
+this.value=="other"
+?"block":"none";
+
+};
+
+/* EDUCATION */
+
+eduType.onchange=function(){
+
+let html="";
+
+if(this.value=="10th"){
+
+html=`
+
+<select id="board10"
+onchange="toggleBoard10()">
+
+<option value="">
+Select Board
+</option>
+
+<option>UP Board</option>
+
+<option>CBSE</option>
+
+<option>ICSE</option>
+
+<option>Bihar Board</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+<input type="text"
+id="customBoard10"
+placeholder="Write Board Name"
+style="display:none;">
+
+<input type="text"
+id="percent10"
+placeholder="Percentage">
+
+<input type="number"
+id="year10"
+placeholder="Passing Year">
+
+`;
+
+}
+
+if(this.value=="12th"){
+
+html=`
+
+<select id="board12"
+onchange="toggleBoard12()">
+
+<option value="">
+Select Board
+</option>
+
+<option>UP Board</option>
+
+<option>CBSE</option>
+
+<option>ICSE</option>
+
+<option>Bihar Board</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+<input type="text"
+id="customBoard12"
+placeholder="Write Board Name"
+style="display:none;">
+
+<input type="text"
+id="percent12"
+placeholder="Percentage">
+
+<input type="number"
+id="year12"
+placeholder="Passing Year">
+
+`;
+
+}
+
+if(this.value=="graduation"){
+
+html=`
+
+<input type="text"
+id="gradCourse"
+placeholder="Course Name">
+
+<select id="gradUniversity"
+onchange="toggleUniversity()">
+
+<option value="">
+Select University
+</option>
+
+<option>CSJM University</option>
+
+<option>Lucknow University</option>
+
+<option>Delhi University</option>
+
+<option value="Other">
+Other
+</option>
+
+</select>
+
+<input type="text"
+id="customUniversity"
+placeholder="Write University Name"
+style="display:none;">
+
+<input type="text"
+id="gradPercent"
+placeholder="Percentage">
+
+<input type="number"
+id="gradYear"
+placeholder="Passing Year">
+
+`;
+
+}
+
+educationFields.innerHTML=html;
+
+};
+
+/* TOGGLE */
+
+function toggleBoard10(){
+
+customBoard10.style.display=
+board10.value=="Other"
+?"block":"none";
+
+}
+
+function toggleBoard12(){
+
+customBoard12.style.display=
+board12.value=="Other"
+?"block":"none";
+
+}
+
+function toggleUniversity(){
+
+customUniversity.style.display=
+gradUniversity.value=="Other"
+?"block":"none";
+
+}
+
+/* SAVE EDUCATION */
+
+function saveEducation(){
+
+let type=eduType.value;
+
+if(type=="") return;
+
+let html="";
+
+if(type=="10th"){
+
+let board=board10.value;
+
+if(board=="Other"){
+board=customBoard10.value;
+}
+
+html=`
+
+<div class="saved-box">
+
+<button class="delete-btn"
+onclick="this.parentElement.remove();autoSave();">
+
+Delete
+
+</button>
+
+<b>High School</b>
+
+<p>
+10th from
+<b>${board}</b>
+with
+<b>${percent10.value}%</b>
+in
+<b>${year10.value}</b>
+</p>
+
+</div>
+
+`;
+
+}
+
+if(type=="12th"){
+
+let board=board12.value;
+
+if(board=="Other"){
+board=customBoard12.value;
+}
+
+html=`
+
+<div class="saved-box">
+
+<button class="delete-btn"
+onclick="this.parentElement.remove();autoSave();">
+
+Delete
+
+</button>
+
+<b>Intermediate</b>
+
+<p>
+12th from
+<b>${board}</b>
+with
+<b>${percent12.value}%</b>
+in
+<b>${year12.value}</b>
+</p>
+
+</div>
+
+`;
+
+}
+
+if(type=="graduation"){
+
+let university=gradUniversity.value;
+
+if(university=="Other"){
+university=customUniversity.value;
+}
+
+html=`
+
+<div class="saved-box">
+
+<button class="delete-btn"
+onclick="this.parentElement.remove();autoSave();">
+
+Delete
+
+</button>
+
+<b>${gradCourse.value}</b>
+
+<p>
+Completed from
+<b>${university}</b>
+with
+<b>${gradPercent.value}%</b>
+in
+<b>${gradYear.value}</b>
+</p>
+
+</div>
+
+`;
+
+}
+
+savedEducation.innerHTML += html;
+
+educationFields.innerHTML="";
+eduType.value="";
+
+autoSave();
+
+}
+
+/* SAVE OTHER */
+
+function saveOtherQualification(){
+
+let course=otherCourse.value;
+
+if(course=="") return;
+
+if(course=="other"){
+course=customCourse.value;
+}
+
+savedOther.innerHTML += `
+
+<div class="saved-box">
+
+<button class="delete-btn"
+onclick="this.parentElement.remove();autoSave();">
+
+Delete
+
+</button>
+
+<b>${course}</b>
+
+<p>
+${otherInstitute.value}
+in
+<b>${otherYear.value}</b>
+</p>
+
+</div>
+
+`;
+
+autoSave();
+
+}
+
+/* SAVE SKILL */
+
+function saveSkill(){
+
+let skill=skillSelect.value;
+
+if(skill=="") return;
+
+if(skill=="other"){
+skill=customSkill.value;
+}
+
+savedSkills.innerHTML += `
+
+<div class="saved-box">
+
+<button class="delete-btn"
+onclick="this.parentElement.remove();autoSave();">
+
+Delete
+
+</button>
+
+<b>${skill}</b>
+
+</div>
+
+`;
+
+autoSave();
+
+}
+
+/* SAVE EXPERIENCE */
+
+function saveExperience(){
+
+let exp=experienceSelect.value;
+
+if(exp=="") return;
+
+if(exp=="other"){
+exp=customExperience.value;
+}
+
+savedExperience.innerHTML += `
+
+<div class="saved-box">
+
+<button class="delete-btn"
+onclick="this.parentElement.remove();autoSave();">
+
+Delete
+
+</button>
+
+<b>${exp}</b>
+
+</div>
+
+`;
+
+autoSave();
+
+}
+
+/* GENERATE */
+
+function generateResume(){
+
+resume.style.display="block";
+
+printBtn.style.display="block";
+
+/* NAME */
+
+document.getElementById("showName").innerHTML =
+document.getElementById("name").value;
+
+/* PERSONAL */
+
+showFather.innerHTML=father.value;
+showMother.innerHTML=mother.value;
+
+showGender.innerHTML=gender.value;
+
+showPhone.innerHTML=phone.value;
+showEmail.innerHTML=email.value;
+showAddress.innerHTML=address.value;
+
+/* CAREER */
+
+if(careerSelect.value=="other"){
+
+showCareer.innerHTML=
+customCareer.value;
+
+}else{
+
+showCareer.innerHTML=
+careerSelect.value;
+
+}
+
+/* DECLARATION */
+
+if(declarationSelect.value=="other"){
+
+showDeclaration.innerHTML=
+customDeclaration.value;
+
+}else{
+
+showDeclaration.innerHTML=
+declarationSelect.value;
+
+}
+
+/* SIGNATURE */
+
+document.getElementById("showSignature").innerHTML =
+document.getElementById("name").value;
+
+/* REMOVE DELETE */
+
+showEducation.innerHTML=
+savedEducation.innerHTML
+.replace(/<button class="delete-btn".*?<\/button>/g,'');
+
+showOther.innerHTML=
+savedOther.innerHTML
+.replace(/<button class="delete-btn".*?<\/button>/g,'');
+
+showExperience.innerHTML=
+savedExperience.innerHTML
+.replace(/<button class="delete-btn".*?<\/button>/g,'');
+
+/* SKILLS */
+
+let skillHTML="";
+
+savedSkills.querySelectorAll("b")
+.forEach(function(skill){
+
+skillHTML +=
+`<li>${skill.innerText}</li>`;
+
+});
+
+showSkills.innerHTML=skillHTML;
+
+/* HIDE EMPTY */
+
+careerSection.style.display=
+showCareer.innerHTML.trim()
+?"block":"none";
+
+educationSection.style.display=
+showEducation.innerHTML.trim()
+?"block":"none";
+
+otherSection.style.display=
+showOther.innerHTML.trim()
+?"block":"none";
+
+experienceSection.style.display=
+showExperience.innerHTML.trim()
+?"block":"none";
+
+skillSection.style.display=
+skillHTML.trim()
+?"block":"none";
+
+declarationSection.style.display=
+showDeclaration.innerHTML.trim()
+?"block":"none";
+
+/* IMAGE */
+
+let file=image.files[0];
+
+if(file){
+
+let reader=new FileReader();
+
+reader.onload=function(e){
+
+showImage.src=e.target.result;
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+window.scrollTo(
+0,
+document.body.scrollHeight
+);
+
+}
+
+/* PRINT */
+
+function printResume(){
+
+window.print();
+
+}
+
+</script>
+
+</body>
+</html>
