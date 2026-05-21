@@ -1219,6 +1219,18 @@ document.getElementById("name").value;
 
 showFather.innerHTML=father.value;
 showMother.innerHTML=mother.value;
+let dobValue = dob.value;
+
+if(dobValue){
+
+let parts = dobValue.split("-");
+
+showDob.innerHTML =
+parts[2] + "/" +
+parts[1] + "/" +
+parts[0];
+
+}
 
 showGender.innerHTML=gender.value;
 
