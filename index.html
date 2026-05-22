@@ -15,77 +15,122 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:#dcdcdc;
+background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
 padding:20px;
+min-height:100vh;
 }
 
+/* FORM */
+
 .form-container{
-width:850px;
+width:900px;
 max-width:100%;
-background:white;
 margin:auto;
-padding:25px;
-border-radius:12px;
-box-shadow:0 0 15px rgba(0,0,0,0.2);
+padding:30px;
+border-radius:20px;
+background:rgba(104, 173, 238, 0.95);
+backdrop-filter:blur(12px);
+box-shadow:0 10px 35px rgba(0,0,0,0.3);
+animation:fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 .form-container h2{
 text-align:center;
-margin-bottom:20px;
-color:#1d3557;
-font-size:32px;
+font-size:38px;
+margin-bottom:25px;
+color:#0f172a;
+font-weight:800;
 }
 
 h3{
 margin-top:25px;
-color:#1d3557;
+margin-bottom:8px;
+color:#1e293b;
+font-size:20px;
 }
 
 input,
 textarea,
 select{
 width:100%;
-padding:11px;
+padding:14px;
 margin-top:10px;
-border:1px solid #ccc;
-border-radius:6px;
+border:none;
+outline:none;
+border-radius:12px;
+background:#cae2fc;
 font-size:15px;
+transition:0.3s;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+background:white;
+box-shadow:0 0 0 3px rgba(37,99,235,0.2);
 }
 
 textarea{
 resize:none;
-height:90px;
+height:100px;
 }
+
+/* BUTTON */
 
 button{
 width:100%;
-padding:12px;
-margin-top:12px;
+padding:14px;
+margin-top:14px;
 border:none;
-background:#1d3557;
-color:white;
+border-radius:12px;
 font-size:16px;
-border-radius:6px;
+font-weight:700;
 cursor:pointer;
+transition:0.3s;
 }
 
 button:hover{
-background:#12263f;
+transform:translateY(-2px);
 }
 
 .add-btn{
-background:#0a7d37;
+background:linear-gradient(135deg,#16a34a,#15803d);
+color:white;
 }
 
 .add-btn:hover{
-background:#06612a;
+background:linear-gradient(135deg,#15803d,#166534);
 }
+
+#generateBtn{
+background:linear-gradient(135deg,#1744a7,#000400);
+color:white;
+}
+
+#printBtn{
+background:linear-gradient(135deg,#0f172a,#1e293b);
+color:white;
+}
+
+/* MULTI BOX */
+
 .multi-select-box{
-border:1px solid #ccc;
-border-radius:6px;
-padding:10px;
+background:#f8fafc;
+padding:15px;
+border-radius:12px;
 margin-top:10px;
-background:white;
+border:1px solid #e2e8f0;
 max-height:180px;
 overflow-y:auto;
 }
@@ -93,51 +138,51 @@ overflow-y:auto;
 .multi-select-box label{
 display:block;
 margin-top:8px;
+font-size:15px;
 cursor:pointer;
-font-size:14px;
 }
 
 .multi-select-box input{
 width:auto;
 margin-right:8px;
 }
-/* SAVED BOX */
+
+/* SAVED */
 
 .saved-box{
 background:white;
-padding:2px;
-border-radius:10px;
-margin-top:10px;
-border-left:5px solid #1d3557;
-box-shadow:0 3px 10px rgba(0,0,0,0.08);
+padding:14px;
+margin-top:12px;
+border-radius:12px;
+border-left:5px solid #2563eb;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 position:relative;
 }
 
 .saved-box b{
-color:#1d3557;
+color:#0f172a;
 font-size:16px;
 }
 
 .saved-box p{
-margin-top:4px;
+margin-top:6px;
+line-height:24px;
 font-size:14px;
-line-height:22px;
 }
 
 .delete-btn{
 position:absolute;
 top:10px;
 right:10px;
-background:red;
+background:#dc2626;
 color:white;
-border:none;
-padding:4px 10px;
-border-radius:4px;
+padding:6px 12px;
 font-size:12px;
-cursor:pointer;
+border:none;
+border-radius:8px;
 width:auto;
-margin:0;
 }
+
 
 /* RESUME */
 
@@ -1060,15 +1105,8 @@ Delete
 
 </button>
 
-<b>High School</b>
-
 <p>
-10th from
-<b>${board}</b>
-with
-<b>${percent10.value}%</b>
-in
-<b>${year10.value}</b>
+  10th from <b>${board}</b> passed with <b>${percent10.value}%</b> in <b>${year10.value}</b>
 </p>
 
 </div>
@@ -1096,15 +1134,8 @@ Delete
 
 </button>
 
-<b>Intermediate</b>
-
 <p>
-12th from
-<b>${board}</b>
-with
-<b>${percent12.value}%</b>
-in
-<b>${year12.value}</b>
+  12th from <b>${board}</b> passed with <b>${percent12.value}%</b> in <b>${year12.value}</b>
 </p>
 
 </div>
@@ -1135,12 +1166,7 @@ Delete
 <b>${gradCourse.value}</b>
 
 <p>
-Completed from
-<b>${university}</b>
-with
-<b>${gradPercent.value}%</b>
-in
-<b>${gradYear.value}</b>
+Completed from <b>${university}</b> Passed with <b>${gradPercent.value}%</b> in <b>${gradYear.value}</b>
 </p>
 
 </div>
@@ -1184,7 +1210,7 @@ Delete
 <b>${course}</b>
 
 <p>
-${otherInstitute.value}
+Completed from <b>${otherInstitute.value}
 in
 <b>${otherYear.value}</b>
 </p>
