@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>📜 Resume Builder</title>
 
-<style>
 
+<style>
 *{
 margin:0;
 padding:0;
@@ -14,13 +14,13 @@ box-sizing:border-box;
 font-family:Arial,sans-serif;
 }
 
+
 body{
 background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
 padding:20px;
 min-height:100vh;
 }
 
-/* FORM */
 
 .form-container{
 width:900px;
@@ -34,16 +34,12 @@ box-shadow:0 10px 35px rgba(0,0,0,0.3);
 animation:fadeIn 0.6s ease;
 }
 
+
 @keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(20px);
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+
 
 .form-container h2{
 text-align:center;
@@ -53,6 +49,7 @@ color:#0f172a;
 font-weight:800;
 }
 
+
 h3{
 margin-top:25px;
 margin-bottom:8px;
@@ -60,9 +57,8 @@ color:#1e293b;
 font-size:20px;
 }
 
-input,
-textarea,
-select{
+
+input,textarea,select{
 width:100%;
 padding:14px;
 margin-top:10px;
@@ -74,19 +70,18 @@ font-size:15px;
 transition:0.3s;
 }
 
-input:focus,
-textarea:focus,
-select:focus{
+
+input:focus,textarea:focus,select:focus{
 background:white;
 box-shadow:0 0 0 3px rgba(37,99,235,0.2);
 }
+
 
 textarea{
 resize:none;
 height:100px;
 }
 
-/* BUTTON */
 
 button{
 width:100%;
@@ -100,30 +95,32 @@ cursor:pointer;
 transition:0.3s;
 }
 
-button:hover{
-transform:translateY(-2px);
-}
+
+button:hover{transform:translateY(-2px);}
+
 
 .add-btn{
 background:linear-gradient(135deg,#16a34a,#15803d);
 color:white;
 }
 
+
 .add-btn:hover{
 background:linear-gradient(135deg,#15803d,#166534);
 }
+
 
 #generateBtn{
 background:linear-gradient(135deg,#1744a7,#000400);
 color:white;
 }
 
+
 #printBtn{
 background:linear-gradient(135deg,#0f172a,#1e293b);
 color:white;
 }
 
-/* MULTI BOX */
 
 .multi-select-box{
 background:#f8fafc;
@@ -135,6 +132,7 @@ max-height:180px;
 overflow-y:auto;
 }
 
+
 .multi-select-box label{
 display:block;
 margin-top:8px;
@@ -142,33 +140,36 @@ font-size:15px;
 cursor:pointer;
 }
 
+
 .multi-select-box input{
 width:auto;
 margin-right:8px;
 }
 
-/* SAVED */
 
 .saved-box{
 background:white;
-padding:1px;
+padding:3px;
 margin-top:12px;
 border-radius:12px;
-border-left:5px solid #2563eb;
+border-bottom:3px solid #515358;
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
 position:relative;
 }
+
 
 .saved-box b{
 color:#0f172a;
 font-size:16px;
 }
 
+
 .saved-box p{
 margin-top:6px;
 line-height:24px;
 font-size:14px;
 }
+
 
 .delete-btn{
 position:absolute;
@@ -187,8 +188,6 @@ margin:0;
 }
 
 
-/* RESUME */
-
 .resume{
 width:794px;
 min-height:1123px;
@@ -199,6 +198,7 @@ box-shadow:0 0 15px rgba(0,0,0,0.25);
 overflow:hidden;
 }
 
+
 .left{
 width:32%;
 background:#f1f3f6;
@@ -207,11 +207,13 @@ min-height:1123px;
 padding:25px;
 }
 
+
 .right{
 width:68%;
 float:left;
 padding:35px;
 }
+
 
 .cv-title{
 text-align:center;
@@ -224,6 +226,7 @@ border-bottom:4px solid #1d3557;
 padding-bottom:10px;
 }
 
+
 .profile{
 width:170px;
 height:170px;
@@ -234,6 +237,7 @@ display:block;
 margin:auto;
 }
 
+
 .name{
 font-size:38px;
 color:#1d3557;
@@ -242,9 +246,9 @@ margin-bottom:20px;
 text-transform:uppercase;
 }
 
-.section{
-margin-top:22px;
-}
+
+.section{margin-top:22px;}
+
 
 .title{
 background:#1d3557;
@@ -255,38 +259,51 @@ margin-bottom:12px;
 border-radius:5px;
 }
 
+
 p,li{
 font-size:14px;
 line-height:24px;
 }
 
-ul{
-padding-left:20px;
+
+ul{padding-left:20px;}
+
+
+.clear{clear:both;}
+
+
+.color-row{
+display:flex;
+gap:12px;
+align-items:center;
+margin-top:10px;
 }
 
-.clear{
-clear:both;
+
+.color-row label{
+white-space:nowrap;
+font-weight:700;
+color:#0f172a;
 }
 
-/* PRINT */
+
+.color-row input[type="color"]{
+width:70px;
+height:45px;
+padding:0;
+border:none;
+background:transparent;
+cursor:pointer;
+}
+
 
 @media print{
-
 body{
 background:white;
 padding:0;
 }
-
-.form-container,
-#printBtn,
-#generateBtn{
-display:none !important;
-}
-
-.delete-btn{
-display:none !important;
-}
-
+.form-container,#printBtn,#generateBtn{display:none !important;}
+.delete-btn{display:none !important;}
 .resume{
 display:block !important;
 width:210mm;
@@ -294,1178 +311,824 @@ min-height:297mm;
 margin:0 auto;
 box-shadow:none;
 }
-
 }
-
 </style>
 </head>
-
 <body>
 
-<div class="form-container">
 
+<div class="form-container">
 <h2>Professional Resume Builder</h2>
 
-<input type="text" id="name" placeholder="Full Name">
 
+<div class="color-row">
+<label for="headingColor">Heading Color</label>
+<input type="color" id="headingColor" value="#1d3557" onchange="updateHeadingColor()">
+</div>
+
+
+<input type="text" id="fullName" placeholder="Full Name">
 <input type="text" id="father" placeholder="Father Name">
-
 <input type="text" id="mother" placeholder="Mother Name">
-
 <input type="date" id="dob">
 
+
 <select id="gender">
-
 <option value="">Select Gender</option>
-
 <option>Male</option>
-
 <option>Female</option>
-
 <option>Other</option>
-
 </select>
+
 
 <input type="text" id="phone" placeholder="Phone Number">
-
 <input type="email" id="email" placeholder="Email Address">
-
 <input type="text" id="address" placeholder="Address">
-<!-- LANGUAGE -->
+
 
 <h3>Languages</h3>
-
 <div class="multi-select-box">
-
 <label><input type="checkbox" class="languageCheck" value="Hindi"> Hindi</label>
-
 <label><input type="checkbox" class="languageCheck" value="English"> English</label>
-
 <label><input type="checkbox" class="languageCheck" value="Urdu"> Urdu</label>
-
 <label><input type="checkbox" class="languageCheck" value="Punjabi"> Punjabi</label>
-
 <label><input type="checkbox" class="languageCheck" value="Gujarati"> Gujarati</label>
-
 <label><input type="checkbox" class="languageCheck" value="Marathi"> Marathi</label>
-
 </div>
-<!-- CAREER -->
+
 
 <h3>Career Objective</h3>
-
 <select id="careerSelect">
-
 <option value="">Select Career Objective</option>
-
-<option>
-To work in a responsible position where I can utilize my commerce knowledge, accounting skills, computer proficiency, and communication abilities for the growth of the organization while continuously improving my professional skills.
-</option>
-
-<option>
-Seeking a responsible career opportunity to fully utilize my training and skills while making a significant contribution to the success of the company.
-</option>
-
-<option>
-To work in a professional environment that encourages continuous learning, innovation, and career growth.
-</option>
-
-<option>
-A highly motivated individual seeking a position where I can contribute effectively and grow professionally through dedication and hard work.
-</option>
-
-<option>
-To be associated with an organization that provides opportunities to enhance my abilities and achieve professional excellence.
-</option>
-
-<option>
-Seeking a position in a dynamic organization where I can apply my technical and interpersonal skills to achieve organizational objectives.
-</option>
-
-<option>
-To secure a professional position that offers challenges, growth opportunities, and a chance to contribute positively to the organization.
-</option>
-
-<option>
-Looking for a growth-oriented career in a reputed organization where I can improve my knowledge and deliver quality performance.
-</option>
-
-<option>
-To work with a progressive organization that provides opportunities to enhance my professional and technical skills.
-</option>
-
-<option>
-Seeking an opportunity to work in a competitive and professional environment where I can contribute to organizational success.
-</option>
-
-<option>
-To build a successful career by working in a challenging environment that encourages creativity, teamwork, and professional development.
-</option>
-
-<option>
-Aiming to achieve a challenging position in an organization where I can utilize my potential and contribute to long-term growth.
-</option>
-
-<option>
-To pursue a challenging career in a reputable organization that offers opportunities for learning and advancement.
-</option>
-
-<option>
-Seeking a position where I can effectively apply my analytical, communication, and problem-solving skills for organizational benefit.
-</option>
-
-<option>
-To contribute my best abilities and dedication towards achieving company goals while continuously improving my professional skills.
-</option>
-
-<option>
-Looking for an opportunity to work in an innovative and growth-driven organization that values dedication and performance.
-</option>
-
-<option>
-To work in a professionally managed organization where I can utilize my abilities efficiently and contribute to overall success.
-</option>
-
-<option>
-Seeking a rewarding career opportunity that allows me to learn, grow, and contribute effectively to the organization.
-</option>
-
-<option>
-To obtain a position that enables me to apply my knowledge and skills while gaining valuable professional experience.
-</option>
-
-<option>
-Dedicated and hardworking individual seeking a position to contribute positively and achieve organizational excellence.
-</option>
-
+<option>To work in a responsible position where I can utilize my commerce knowledge, accounting skills, computer proficiency, and communication abilities for the growth of the organization while continuously improving my professional skills.</option>
+<option>Seeking a responsible career opportunity to fully utilize my training and skills while making a significant contribution to the success of the company.</option>
+<option>To work in a professional environment that encourages continuous learning, innovation, and career growth.</option>
+<option>A highly motivated individual seeking a position where I can contribute effectively and grow professionally through dedication and hard work.</option>
+<option>To be associated with an organization that provides opportunities to enhance my abilities and achieve professional excellence.</option>
+<option>Seeking a position in a dynamic organization where I can apply my technical and interpersonal skills to achieve organizational objectives.</option>
+<option>To secure a professional position that offers challenges, growth opportunities, and a chance to contribute positively to the organization.</option>
+<option>Looking for a growth-oriented career in a reputed organization where I can improve my knowledge and deliver quality performance.</option>
+<option>To work with a progressive organization that provides opportunities to enhance my professional and technical skills.</option>
+<option>Seeking an opportunity to work in a competitive and professional environment where I can contribute to organizational success.</option>
+<option>To build a successful career by working in a challenging environment that encourages creativity, teamwork, and professional development.</option>
+<option>Aiming to achieve a challenging position in an organization where I can utilize my potential and contribute to long-term growth.</option>
+<option>To pursue a challenging career in a reputable organization that offers opportunities for learning and advancement.</option>
+<option>Seeking a position where I can effectively apply my analytical, communication, and problem-solving skills for organizational benefit.</option>
+<option>To contribute my best abilities and dedication towards achieving company goals while continuously improving my professional skills.</option>
+<option>Looking for an opportunity to work in an innovative and growth-driven organization that values dedication and performance.</option>
+<option>To work in a professionally managed organization where I can utilize my abilities efficiently and contribute to overall success.</option>
+<option>Seeking a rewarding career opportunity that allows me to learn, grow, and contribute effectively to the organization.</option>
+<option>To obtain a position that enables me to apply my knowledge and skills while gaining valuable professional experience.</option>
+<option>Dedicated and hardworking individual seeking a position to contribute positively and achieve organizational excellence.</option>
 <option value="other">Other</option>
-
 </select>
 
-<textarea id="customCareer"
-placeholder="Write Your Career Objective"
-style="display:none;"></textarea>
 
-<!-- EDUCATION -->
+<textarea id="customCareer" placeholder="Write Your Career Objective" style="display:none;"></textarea>
+
 
 <h3>Education</h3>
-
 <select id="eduType">
-
 <option value="">Select Education</option>
-
 <option value="10th">10th</option>
-
 <option value="12th">12th</option>
-
 <option value="graduation">Graduation/Other</option>
-
 </select>
 
+
 <div id="educationFields"></div>
-
-<button type="button"
-class="add-btn"
-onclick="saveEducation()">
-
-+ Add Education
-
-</button>
-
+<button type="button" class="add-btn" onclick="saveEducation()">+ Add Education</button>
 <div id="savedEducation"></div>
 
-<!-- OTHER QUALIFICATION -->
 
 <h3>Other Qualification</h3>
 
-<select id="otherCourse">
 
+<select id="otherCourseSelect" onchange="toggleOtherCourse(); loadInstituteOptions();">
 <option value="">Select Course</option>
-
-<option>CCC</option>
-
-<option>ADCA</option>
-
-<option>ITI</option>
-
-<option>Polytechnic</option>
-
-<option>DCA</option>
-
-<option value="other">Other</option>
-
+<option value="CCC">CCC</option>
+<option value="O Level">O Level</option>
+<option value="A Level">A Level</option>
+<option value="B Level">B Level</option>
+<option value="C Level">C Level</option>
+<option value="ITI">ITI</option>
+<option value="Polytechnic">Polytechnic</option>
+<option value="ADCA">ADCA</option>
+<option value="DCA">DCA</option>
+<option value="Tally">Tally</option>
+<option value="OTHER">OTHER</option>
 </select>
 
-<input type="text"
-id="customCourse"
-placeholder="Write Course Name"
-style="display:none;">
 
-<input type="text"
-id="otherInstitute"
-placeholder="Institute / Sanstha Name">
+<input type="text" id="customOtherCourse" placeholder="Write Course Name" style="display:none;">
 
-<input type="number"
-id="otherYear"
-placeholder="Passing Year">
 
-<button type="button"
-class="add-btn"
-onclick="saveOtherQualification()">
+<select id="otherInstituteSelect" onchange="toggleOtherInstitute(); loadTradeOptions();">
+<option value="">Select Institute</option>
+</select>
 
-+ Add Qualification
 
-</button>
+<input type="text" id="customOtherInstitute" placeholder="Write Institute Name" style="display:none;">
 
+
+<select id="otherTradeSelect" onchange="toggleOtherTrade()">
+<option value="">Select Trade</option>
+</select>
+
+
+<input type="text" id="customOtherTrade" placeholder="Write Trade Name" style="display:none;">
+
+
+<input type="number" id="otherYear" placeholder="Passing Year">
+
+
+<button type="button" class="add-btn" onclick="saveOtherQualification()">+ Add Qualification</button>
 <div id="savedOther"></div>
 
-<!-- SKILLS -->
 
 <h3>Skills</h3>
-
 <select id="skillSelect">
-
 <option value="">Select Skill</option>
-
 <option>Computer Knowledge</option>
-
 <option>MS Office</option>
-
 <option>Communication Skill</option>
-
 <option>Typing</option>
-
 <option>Leadership</option>
-
 <option value="other">Other</option>
-
 </select>
 
-<input type="text"
-id="customSkill"
-placeholder="Write Skill"
-style="display:none;">
 
-<button type="button"
-class="add-btn"
-onclick="saveSkill()">
-
-+ Add Skill
-
-</button>
-
+<input type="text" id="customSkill" placeholder="Write Skill" style="display:none;">
+<button type="button" class="add-btn" onclick="saveSkill()">+ Add Skill</button>
 <div id="savedSkills"></div>
 
-<!-- EXPERIENCE -->
 
 <h3>Experience</h3>
-
 <select id="experienceSelect">
-
 <option value="">Select Experience</option>
-
 <option>Fresher</option>
-
 <option>1 Year Experience</option>
-
 <option>2 Year Experience</option>
-
 <option>3 Year Experience</option>
-
 <option value="other">Other</option>
-
 </select>
 
-<input type="text"
-id="customExperience"
-placeholder="Write Experience"
-style="display:none;">
 
-<button type="button"
-class="add-btn"
-onclick="saveExperience()">
-
-+ Add Experience
-
-</button>
-
+<input type="text" id="customExperience" placeholder="Write Experience" style="display:none;">
+<button type="button" class="add-btn" onclick="saveExperience()">+ Add Experience</button>
 <div id="savedExperience"></div>
 
-<!-- DECLARATION -->
 
 <h3>Declaration</h3>
-
 <select id="declarationSelect">
-
 <option value="">Select Declaration</option>
-
-<option>
-I hereby declare that all the information provided above is true and correct to the best of my knowledge and belief.
-</option>
-
-<option>
-I solemnly declare that the details furnished by me in this resume are true and accurate to the best of my knowledge.
-</option>
-
-<option>
-I hereby confirm that the above information is genuine and I take full responsibility for its correctness.
-</option>
-
+<option>I hereby declare that all the information provided above is true and correct to the best of my knowledge and belief.</option>
+<option>I solemnly declare that the details furnished by me in this resume are true and accurate to the best of my knowledge.</option>
+<option>I hereby confirm that the above information is genuine and I take full responsibility for its correctness.</option>
 <option value="other">Other</option>
-
 </select>
 
-<textarea id="customDeclaration"
-placeholder="Write Your Own Declaration"
-style="display:none;"></textarea>
+
+<textarea id="customDeclaration" placeholder="Write Your Own Declaration" style="display:none;"></textarea>
+
 
 <input type="file" id="image">
 
-<button id="generateBtn"
-onclick="generateResume()">
 
-Generate Resume
-
-</button>
-
-<button id="printBtn"
-onclick="printResume()"
-style="display:none;">
-
-Print Resume
-
-</button>
-
+<button id="generateBtn" onclick="generateResume()">Generate Resume</button>
+<button id="printBtn" onclick="printResume()" style="display:none;">Print Resume</button>
 </div>
 
-<!-- RESUME -->
 
 <div class="resume" id="resume">
+<div class="cv-title">CURRICULUM VITAE</div>
 
-<div class="cv-title">
-CURRICULUM VITAE
-</div>
 
 <div class="left">
+<img id="showImage" class="profile" style="display:none;">
 
-<img id="showImage" class="profile">
 
-<div class="section">
-
-<div class="title">
-PERSONAL DETAILS
+<div class="section" id="personalSection">
+<div class="title">PERSONAL DETAILS</div>
+<p id="fatherRow"><b>Father :</b> <span id="showFather"></span></p>
+<p id="motherRow"><b>Mother :</b> <span id="showMother"></span></p>
+<p id="dobRow"><b>DOB :</b> <span id="showDob"></span></p>
+<p id="genderRow"><b>Gender :</b> <span id="showGender"></span></p>
 </div>
 
-<p><b>Father :</b> <span id="showFather"></span></p>
 
-<p><b>Mother :</b> <span id="showMother"></span></p>
-
-<p><b>DOB :</b> <span id="showDob"></span></p>
-
-<p><b>Gender :</b> <span id="showGender"></span></p>
-
+<div class="section" id="contactSection">
+<div class="title">CONTACT</div>
+<div id="phoneBlock"><b>Mobile :</b><br><p id="showPhone"></p></div>
+<div id="emailBlock"><b>Mail :</b><br><p id="showEmail"></p></div>
+<div id="addressBlock"><b>Address :</b><br><p id="showAddress"></p></div>
 </div>
 
-<div class="section">
 
-<div class="title">
-CONTACT
-</div>
-<b>Mobile :</b><br>
-<p id="showPhone"></p>
-<b>Mail :</b><br>
-<p id="showEmail"></p>
-<b>Address :</b><br>
-<p id="showAddress"></p>
-
-</div>
 <div class="section" id="languageSection">
-
-<div class="title">
-LANGUAGE
-</div>
-
+<div class="title">LANGUAGE</div>
 <ul id="showLanguage"></ul>
-
 </div>
+
 
 <div class="section" id="skillSection">
-
-<div class="title">
-    SKILLS
-</div>
-
+<div class="title">SKILLS</div>
 <ul id="showSkills"></ul>
-
+</div>
 </div>
 
-</div>
 
 <div class="right">
-
 <div class="name" id="showName"></div>
 
+
 <div class="section" id="careerSection">
-
-<div class="title">
-CAREER OBJECTIVE
-</div>
-
+<div class="title">CAREER OBJECTIVE</div>
 <p id="showCareer"></p>
-
 </div>
+
 
 <div class="section" id="educationSection">
-
-<div class="title">
-EDUCATION
-</div>
-
+<div class="title">EDUCATION</div>
 <div id="showEducation"></div>
-
 </div>
+
 
 <div class="section" id="otherSection">
-
-<div class="title">
-OTHER QUALIFICATION
-</div>
-
+<div class="title">OTHER QUALIFICATION</div>
 <div id="showOther"></div>
-
 </div>
+
 
 <div class="section" id="experienceSection">
-
-<div class="title">
-EXPERIENCE
-</div>
-
+<div class="title">EXPERIENCE</div>
 <div id="showExperience"></div>
-
 </div>
+
 
 <div class="section" id="declarationSection">
-
-<div class="title">
-DECLARATION
-</div>
-
+<div class="title">DECLARATION</div>
 <p id="showDeclaration"></p>
-
 <br><br>
-
-<p style="text-align:right;">
-<b id="showSignature"></b>
-</p>
-
+<p style="text-align:right;"><b id="showSignature"></b></p>
+</div>
 </div>
 
-</div>
 
 <div class="clear"></div>
-
 </div>
+
 
 <script>
+function getEl(id){ return document.getElementById(id); }
 
-/* AUTO SAVE */
+
+function updateHeadingColor(){
+let c = getEl("headingColor").value;
+document.querySelectorAll(".title").forEach(el => el.style.background = c);
+document.getElementById("showName").style.color = c;
+document.querySelectorAll(".cv-title").forEach(el => el.style.color = c);
+document.querySelectorAll(".cv-title").forEach(el => el.style.borderBottomColor = c);
+}
+
 
 function autoSave(){
-
 let formData={
-
-name:name.value,
-father:father.value,
-mother:mother.value,
-dob:dob.value,
-gender:gender.value,
-phone:phone.value,
-email:email.value,
-address:address.value,
-languages:Array.from(
-document.querySelectorAll(".languageCheck:checked")
-).map(cb=>cb.value),
-
-careerSelect:careerSelect.value,
-customCareer:customCareer.value,
-
-savedEducation:savedEducation.innerHTML,
-savedOther:savedOther.innerHTML,
-savedSkills:savedSkills.innerHTML,
-savedExperience:savedExperience.innerHTML,
-
-declarationSelect:declarationSelect.value,
-customDeclaration:customDeclaration.value
-
+fullName:getEl("fullName").value,
+father:getEl("father").value,
+mother:getEl("mother").value,
+dob:getEl("dob").value,
+gender:getEl("gender").value,
+phone:getEl("phone").value,
+email:getEl("email").value,
+address:getEl("address").value,
+languages:Array.from(document.querySelectorAll(".languageCheck:checked")).map(cb=>cb.value),
+careerSelect:getEl("careerSelect").value,
+customCareer:getEl("customCareer").value,
+savedEducation:getEl("savedEducation").innerHTML,
+otherCourseSelect:getEl("otherCourseSelect").value,
+customOtherCourse:getEl("customOtherCourse").value,
+otherInstituteSelect:getEl("otherInstituteSelect").value,
+customOtherInstitute:getEl("customOtherInstitute").value,
+otherTradeSelect:getEl("otherTradeSelect").value,
+customOtherTrade:getEl("customOtherTrade").value,
+otherYear:getEl("otherYear").value,
+savedOther:getEl("savedOther").innerHTML,
+savedSkills:getEl("savedSkills").innerHTML,
+savedExperience:getEl("savedExperience").innerHTML,
+declarationSelect:getEl("declarationSelect").value,
+customDeclaration:getEl("customDeclaration").value,
+headingColor:getEl("headingColor").value
 };
-
-localStorage.setItem(
-"resumeFormData",
-JSON.stringify(formData)
-);
-
+localStorage.setItem("resumeFormData",JSON.stringify(formData));
 }
 
-/* LOAD SAVE */
 
 window.onload=function(){
-
-let savedData=
-localStorage.getItem("resumeFormData");
-
+let savedData=localStorage.getItem("resumeFormData");
 if(savedData){
-
 let data=JSON.parse(savedData);
 
-name.value=data.name || "";
-father.value=data.father || "";
-mother.value=data.mother || "";
-dob.value=data.dob || "";
-gender.value=data.gender || "";
-phone.value=data.phone || "";
-email.value=data.email || "";
-address.value=data.address || "";
+
+getEl("fullName").value=data.fullName || "";
+getEl("father").value=data.father || "";
+getEl("mother").value=data.mother || "";
+getEl("dob").value=data.dob || "";
+getEl("gender").value=data.gender || "";
+getEl("phone").value=data.phone || "";
+getEl("email").value=data.email || "";
+getEl("address").value=data.address || "";
+
+
 if(data.languages){
-
-document.querySelectorAll(".languageCheck")
-.forEach(function(cb){
-
-cb.checked =
-data.languages.includes(cb.value);
-
+document.querySelectorAll(".languageCheck").forEach(function(cb){
+cb.checked=data.languages.includes(cb.value);
 });
-
 }
 
-careerSelect.value=data.careerSelect || "";
-customCareer.value=data.customCareer || "";
 
-declarationSelect.value=data.declarationSelect || "";
-customDeclaration.value=data.customDeclaration || "";
+getEl("careerSelect").value=data.careerSelect || "";
+getEl("customCareer").value=data.customCareer || "";
+getEl("savedEducation").innerHTML=data.savedEducation || "";
 
-savedEducation.innerHTML=data.savedEducation || "";
-savedOther.innerHTML=data.savedOther || "";
-savedSkills.innerHTML=data.savedSkills || "";
-savedExperience.innerHTML=data.savedExperience || "";
 
-if(careerSelect.value=="other"){
-customCareer.style.display="block";
+getEl("otherCourseSelect").value=data.otherCourseSelect || "";
+getEl("customOtherCourse").value=data.customOtherCourse || "";
+getEl("otherInstituteSelect").value=data.otherInstituteSelect || "";
+getEl("customOtherInstitute").value=data.customOtherInstitute || "";
+getEl("otherTradeSelect").value=data.otherTradeSelect || "";
+getEl("customOtherTrade").value=data.customOtherTrade || "";
+getEl("otherYear").value=data.otherYear || "";
+getEl("savedOther").innerHTML=data.savedOther || "";
+
+
+getEl("savedSkills").innerHTML=data.savedSkills || "";
+getEl("savedExperience").innerHTML=data.savedExperience || "";
+
+
+getEl("declarationSelect").value=data.declarationSelect || "";
+getEl("customDeclaration").value=data.customDeclaration || "";
+getEl("headingColor").value=data.headingColor || "#1d3557";
+
+
+if(getEl("careerSelect").value=="other") getEl("customCareer").style.display="block";
+if(getEl("declarationSelect").value=="other") getEl("customDeclaration").style.display="block";
+if(getEl("otherCourseSelect").value=="OTHER") getEl("customOtherCourse").style.display="block";
+if(getEl("otherInstituteSelect").value=="OTHER") getEl("customOtherInstitute").style.display="block";
+if(getEl("otherTradeSelect").value=="OTHER") getEl("customOtherTrade").style.display="block";
+
+
+if(getEl("otherCourseSelect").value){
+loadInstituteOptions();
+getEl("otherInstituteSelect").value=data.otherInstituteSelect || "";
+}
+if(getEl("otherInstituteSelect").value){
+loadTradeOptions();
+getEl("otherTradeSelect").value=data.otherTradeSelect || "";
 }
 
-if(declarationSelect.value=="other"){
-customDeclaration.style.display="block";
+
+updateHeadingColor();
 }
-
-}
-
 };
 
-/* AUTO SAVE EVENTS */
 
-document.addEventListener(
-"input",
-autoSave
-);
+document.addEventListener("input",autoSave);
+document.addEventListener("change",autoSave);
 
-document.addEventListener(
-"change",
-autoSave
-);
 
-/* DROPDOWN */
-
-careerSelect.onchange=function(){
-
-customCareer.style.display=
-this.value=="other"
-?"block":"none";
-
+getEl("careerSelect").onchange=function(){
+getEl("customCareer").style.display=this.value=="other" ? "block" : "none";
 };
 
-skillSelect.onchange=function(){
 
-customSkill.style.display=
-this.value=="other"
-?"block":"none";
-
+getEl("skillSelect").onchange=function(){
+getEl("customSkill").style.display=this.value=="other" ? "block" : "none";
 };
 
-experienceSelect.onchange=function(){
 
-customExperience.style.display=
-this.value=="other"
-?"block":"none";
-
+getEl("experienceSelect").onchange=function(){
+getEl("customExperience").style.display=this.value=="other" ? "block" : "none";
 };
 
-otherCourse.onchange=function(){
 
-customCourse.style.display=
-this.value=="other"
-?"block":"none";
-
+getEl("declarationSelect").onchange=function(){
+getEl("customDeclaration").style.display=this.value=="other" ? "block" : "none";
 };
 
-declarationSelect.onchange=function(){
 
-customDeclaration.style.display=
-this.value=="other"
-?"block":"none";
-
-};
-
-/* EDUCATION */
-
-eduType.onchange=function(){
-
+getEl("eduType").onchange=function(){
 let html="";
-
 if(this.value=="10th"){
-
 html=`
-
-<select id="board10"
-onchange="toggleBoard10()">
-
-<option value="">
-Select Board
-</option>
-
+<select id="board10" onchange="toggleBoard10()">
+<option value="">Select Board</option>
 <option>UP Board</option>
-
 <option>CBSE</option>
-
 <option>ICSE</option>
-
 <option>Bihar Board</option>
-
-<option value="Other">
-Other
-</option>
-
+<option value="Other">Other</option>
 </select>
-
-<input type="text"
-id="customBoard10"
-placeholder="Write Board Name"
-style="display:none;">
-
-<input type="text"
-id="percent10"
-placeholder="Percentage">
-
-<input type="number"
-id="year10"
-placeholder="Passing Year">
-
+<input type="text" id="customBoard10" placeholder="Write Board Name" style="display:none;">
+<select id="status10" onchange="togglePercent10()">
+<option value="">Select Status</option>
+<option value="Passed">Passed</option>
+<option value="Appearing">Appearing</option>
+</select>
+<input type="text" id="percent10" placeholder="Percentage">
+<input type="number" id="year10" placeholder="Year">
 `;
-
 }
-
 if(this.value=="12th"){
-
 html=`
-
-<select id="board12"
-onchange="toggleBoard12()">
-
-<option value="">
-Select Board
-</option>
-
+<select id="board12" onchange="toggleBoard12()">
+<option value="">Select Board</option>
 <option>UP Board</option>
-
 <option>CBSE</option>
-
 <option>ICSE</option>
-
 <option>Bihar Board</option>
-
-<option value="Other">
-Other
-</option>
-
+<option value="Other">Other</option>
 </select>
-
-<input type="text"
-id="customBoard12"
-placeholder="Write Board Name"
-style="display:none;">
-
-<input type="text"
-id="percent12"
-placeholder="Percentage">
-
-<input type="number"
-id="year12"
-placeholder="Passing Year">
-
+<input type="text" id="customBoard12" placeholder="Write Board Name" style="display:none;">
+<select id="status12" onchange="togglePercent12()">
+<option value="">Select Status</option>
+<option value="Passed">Passed</option>
+<option value="Appearing">Appearing</option>
+</select>
+<input type="text" id="percent12" placeholder="Percentage">
+<input type="number" id="year12" placeholder="Year">
 `;
-
 }
-
 if(this.value=="graduation"){
-
 html=`
-
-<input type="text"
-id="gradCourse"
-placeholder="Course Name">
-
-<select id="gradUniversity"
-onchange="toggleUniversity()">
-
-<option value="">
-Select University
-</option>
-
+<input type="text" id="gradCourse" placeholder="Course Name">
+<select id="gradUniversity" onchange="toggleUniversity()">
+<option value="">Select University</option>
 <option>CSJM University</option>
-
 <option>Lucknow University</option>
-
 <option>Delhi University</option>
-
-<option value="Other">
-Other
-</option>
-
+<option value="Other">Other</option>
 </select>
-
-<input type="text"
-id="customUniversity"
-placeholder="Write University Name"
-style="display:none;">
-
-<input type="text"
-id="gradPercent"
-placeholder="Percentage">
-
-<input type="number"
-id="gradYear"
-placeholder="Passing Year">
-
+<input type="text" id="customUniversity" placeholder="Write University Name" style="display:none;">
+<select id="gradStatus" onchange="toggleGradPercent()">
+<option value="">Select Status</option>
+<option value="Passed">Passed</option>
+<option value="Appearing">Appearing</option>
+</select>
+<input type="text" id="gradPercent" placeholder="Percentage">
+<input type="number" id="gradYear" placeholder="Year">
 `;
-
 }
-
-educationFields.innerHTML=html;
-
+getEl("educationFields").innerHTML=html;
 };
 
-/* TOGGLE */
 
-function toggleBoard10(){
+function toggleBoard10(){ getEl("customBoard10").style.display=getEl("board10").value=="Other" ? "block" : "none"; }
+function toggleBoard12(){ getEl("customBoard12").style.display=getEl("board12").value=="Other" ? "block" : "none"; }
+function toggleUniversity(){ getEl("customUniversity").style.display=getEl("gradUniversity").value=="Other" ? "block" : "none"; }
+function togglePercent10(){ let s=getEl("status10").value; getEl("percent10").style.display=s=="Appearing" ? "none" : "block"; if(s=="Appearing") getEl("percent10").value=""; }
+function togglePercent12(){ let s=getEl("status12").value; getEl("percent12").style.display=s=="Appearing" ? "none" : "block"; if(s=="Appearing") getEl("percent12").value=""; }
+function toggleGradPercent(){ let s=getEl("gradStatus").value; getEl("gradPercent").style.display=s=="Appearing" ? "none" : "block"; if(s=="Appearing") getEl("gradPercent").value=""; }
 
-customBoard10.style.display=
-board10.value=="Other"
-?"block":"none";
-
-}
-
-function toggleBoard12(){
-
-customBoard12.style.display=
-board12.value=="Other"
-?"block":"none";
-
-}
-
-function toggleUniversity(){
-
-customUniversity.style.display=
-gradUniversity.value=="Other"
-?"block":"none";
-
-}
-
-/* SAVE EDUCATION */
 
 function saveEducation(){
-
-let type=eduType.value;
-
+let type=getEl("eduType").value;
 if(type=="") return;
-
 let html="";
 
+
 if(type=="10th"){
-
-let board=board10.value;
-
-if(board=="Other"){
-board=customBoard10.value;
+let board=getEl("board10").value;
+let status=getEl("status10").value;
+if(board=="Other") board=getEl("customBoard10").value;
+if(status=="Appearing"){
+html=`<div class="saved-box"><button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button><p>10th from <b>${board}</b> Appearing in <b>${getEl("year10").value}</b></p></div>`;
+}else{
+html=`<div class="saved-box"><button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button><p>10th from <b>${board}</b> passed with <b>${getEl("percent10").value}%</b> in <b>${getEl("year10").value}</b></p></div>`;
+}
 }
 
-html=`
-
-<div class="saved-box">
-
-<button class="delete-btn"
-onclick="this.parentElement.remove();autoSave();">
-
-Delete
-
-</button>
-
-<p>
-  10th from <b>${board}</b> passed with <b>${percent10.value}%</b> in <b>${year10.value}</b>
-</p>
-
-</div>
-
-`;
-
-}
 
 if(type=="12th"){
-
-let board=board12.value;
-
-if(board=="Other"){
-board=customBoard12.value;
+let board=getEl("board12").value;
+let status=getEl("status12").value;
+if(board=="Other") board=getEl("customBoard12").value;
+if(status=="Appearing"){
+html=`<div class="saved-box"><button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button><p>12th from <b>${board}</b> Appearing in <b>${getEl("year12").value}</b></p></div>`;
+}else{
+html=`<div class="saved-box"><button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button><p>12th from <b>${board}</b> passed with <b>${getEl("percent12").value}%</b> in <b>${getEl("year12").value}</b></p></div>`;
+}
 }
 
-html=`
-
-<div class="saved-box">
-
-<button class="delete-btn"
-onclick="this.parentElement.remove();autoSave();">
-
-Delete
-
-</button>
-
-<p>
-  12th from <b>${board}</b> passed with <b>${percent12.value}%</b> in <b>${year12.value}</b>
-</p>
-
-</div>
-
-`;
-
-}
 
 if(type=="graduation"){
-
-let university=gradUniversity.value;
-
-if(university=="Other"){
-university=customUniversity.value;
+let university=getEl("gradUniversity").value;
+let status=getEl("gradStatus").value;
+if(university=="Other") university=getEl("customUniversity").value;
+if(status=="Appearing"){
+html=`<div class="saved-box"><button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button><b>${getEl("gradCourse").value}</b> from <b>${university}</b> Appearing in <b>${getEl("gradYear").value}</b></div>`;
+}else{
+html=`<div class="saved-box"><button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button><b>${getEl("gradCourse").value}</b> Completed from <b>${university}</b> Passed with <b>${getEl("gradPercent").value}%</b> in <b>${getEl("gradYear").value}</b></div>`;
+}
 }
 
-html=`
 
-<div class="saved-box">
-
-<button class="delete-btn"
-onclick="this.parentElement.remove();autoSave();">
-
-Delete
-
-</button>
-
-<b>${gradCourse.value}</b>
-
-<p>
-Completed from <b>${university}</b> Passed with <b>${gradPercent.value}%</b> in <b>${gradYear.value}</b>
-</p>
-
-</div>
-
-`;
-
-}
-
-savedEducation.innerHTML += html;
-
-educationFields.innerHTML="";
-eduType.value="";
-
+getEl("savedEducation").innerHTML += html;
+getEl("educationFields").innerHTML="";
+getEl("eduType").value="";
 autoSave();
-
 }
 
-/* SAVE OTHER */
+
+function toggleOtherCourse(){
+let v=getEl("otherCourseSelect").value;
+getEl("customOtherCourse").style.display=v=="OTHER" ? "block" : "none";
+if(v!="OTHER") getEl("customOtherCourse").value="";
+}
+
+
+function toggleOtherInstitute(){
+let v=getEl("otherInstituteSelect").value;
+getEl("customOtherInstitute").style.display=v=="OTHER" ? "block" : "none";
+if(v!="OTHER") getEl("customOtherInstitute").value="";
+}
+
+
+function toggleOtherTrade(){
+let v=getEl("otherTradeSelect").value;
+getEl("customOtherTrade").style.display=v=="OTHER" ? "block" : "none";
+if(v!="OTHER") getEl("customOtherTrade").value="";
+}
+
+
+function loadInstituteOptions(){
+let course=getEl("otherCourseSelect").value;
+let instituteSelect=getEl("otherInstituteSelect");
+let options=`<option value="">Select Institute</option>`;
+
+
+if(course=="CCC" || course=="O Level" || course=="A Level" || course=="B Level" || course=="C Level" || course=="ADCA" || course=="DCA" || course=="Tally" || course=="Typing"){
+options += `<option value="NIELIT">NIELIT</option><option value="OTHER">OTHER</option>`;
+}
+else if(course=="ITI" || course=="Polytechnic"){
+options += `<option value="NCVT">NCVT</option><option value="SCVT">SCVT</option><option value="OTHER">OTHER</option>`;
+}
+else if(course=="OTHER"){
+options += `<option value="OTHER">OTHER</option>`;
+}
+
+
+instituteSelect.innerHTML=options;
+getEl("otherTradeSelect").innerHTML=`<option value="">Select Trade</option>`;
+getEl("customOtherInstitute").style.display="none";
+getEl("customOtherInstitute").value="";
+getEl("customOtherTrade").style.display="none";
+getEl("customOtherTrade").value="";
+}
+
+
+function loadTradeOptions(){
+let institute=getEl("otherInstituteSelect").value;
+let tradeSelect=getEl("otherTradeSelect");
+let options=`<option value="">Select Trade</option>`;
+
+
+if(institute=="NIELIT"){
+options += `
+<option value="CCC">CCC</option>
+<option value="O Level">O Level</option>
+<option value="A Level">A Level</option>
+<option value="ADCA">ADCA</option>
+<option value="DCA">DCA</option>
+<option value="Tally">Tally</option>
+<option value="Typing">Typing</option>
+<option value="OTHER">OTHER</option>
+`;
+}
+else if(institute=="NCVT" || institute=="SCVT"){
+options += `
+<option value="Fitter">Fitter</option>
+<option value="Turner">Turner</option>
+<option value="Chemical">Chemical</option>
+<option value="Mechanical">Mechanical</option>
+<option value="Electrician">Electrician</option>
+<option value="Welder">Welder</option>
+<option value="COPA">COPA</option>
+<option value="Plumber">Plumber</option>
+<option value="OTHER">OTHER</option>
+`;
+}
+else if(institute=="OTHER"){
+options += `
+<option value="Computer Course">Computer Course</option>
+<option value="ITI Trade">ITI Trade</option>
+<option value="Polytechnic Trade">Polytechnic Trade</option>
+<option value="OTHER">OTHER</option>
+`;
+}
+
+
+tradeSelect.innerHTML=options;
+getEl("customOtherTrade").style.display="none";
+getEl("customOtherTrade").value="";
+}
+
 
 function saveOtherQualification(){
+let course=getEl("otherCourseSelect").value;
+let institute=getEl("otherInstituteSelect").value;
+let trade=getEl("otherTradeSelect").value;
+let year=getEl("otherYear").value;
 
-let course=otherCourse.value;
 
-if(course=="") return;
+if(!course || !institute || !trade) return;
 
-if(course=="other"){
-course=customCourse.value;
-}
 
-savedOther.innerHTML += `
+if(course=="OTHER") course=getEl("customOtherCourse").value;
+if(institute=="OTHER") institute=getEl("customOtherInstitute").value;
+if(trade=="OTHER") trade=getEl("customOtherTrade").value;
 
+
+if(!course || !institute || !trade) return;
+
+
+getEl("savedOther").innerHTML += `
 <div class="saved-box">
-
-<button class="delete-btn"
-onclick="this.parentElement.remove();autoSave();">
-
-Delete
-
-</button>
-
+<button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button>
 <b>${course}</b>
-
-<p>
-Completed from <b>${otherInstitute.value}
-in
-<b>${otherYear.value}</b>
-</p>
-
+from <b>${institute}</b> - <b>${trade}</b> in <b>${year}</b>
 </div>
-
 `;
 
-autoSave();
 
+getEl("otherCourseSelect").value="";
+getEl("otherInstituteSelect").innerHTML=`<option value="">Select Institute</option>`;
+getEl("otherTradeSelect").innerHTML=`<option value="">Select Trade</option>`;
+getEl("customOtherCourse").style.display="none";
+getEl("customOtherInstitute").style.display="none";
+getEl("customOtherTrade").style.display="none";
+getEl("customOtherCourse").value="";
+getEl("customOtherInstitute").value="";
+getEl("customOtherTrade").value="";
+getEl("otherYear").value="";
+
+
+autoSave();
 }
 
-/* SAVE SKILL */
 
 function saveSkill(){
-
-let skill=skillSelect.value;
-
+let skill=getEl("skillSelect").value;
 if(skill=="") return;
-
-if(skill=="other"){
-skill=customSkill.value;
-}
-
-savedSkills.innerHTML += `
-
+if(skill=="other") skill=getEl("customSkill").value;
+getEl("savedSkills").innerHTML += `
 <div class="saved-box">
-
-<button class="delete-btn"
-onclick="this.parentElement.remove();autoSave();">
-
-Delete
-
-</button>
-
+<button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button>
 <b>${skill}</b>
-
-</div>
-
-`;
-
+</div>`;
 autoSave();
-
 }
 
-/* SAVE EXPERIENCE */
 
 function saveExperience(){
-
-let exp=experienceSelect.value;
-
+let exp=getEl("experienceSelect").value;
 if(exp=="") return;
-
-if(exp=="other"){
-exp=customExperience.value;
-}
-
-savedExperience.innerHTML += `
-
+if(exp=="other") exp=getEl("customExperience").value;
+getEl("savedExperience").innerHTML += `
 <div class="saved-box">
-
-<button class="delete-btn"
-onclick="this.parentElement.remove();autoSave();">
-
-Delete
-
-</button>
-
+<button class="delete-btn" onclick="this.parentElement.remove();autoSave();">Delete</button>
 <b>${exp}</b>
-
-</div>
-
-`;
-
+</div>`;
 autoSave();
-
 }
 
-/* GENERATE */
 
 function generateResume(){
+updateHeadingColor();
+getEl("resume").style.display="block";
+getEl("printBtn").style.display="block";
 
-resume.style.display="block";
 
-printBtn.style.display="block";
+getEl("showName").innerHTML=getEl("fullName").value;
+getEl("showFather").innerHTML=getEl("father").value;
+getEl("showMother").innerHTML=getEl("mother").value;
 
-/* NAME */
 
-document.getElementById("showName").innerHTML =
-document.getElementById("name").value;
-
-/* PERSONAL */
-
-showFather.innerHTML=father.value;
-showMother.innerHTML=mother.value;
-let dobValue = dob.value;
-
+let dobValue=getEl("dob").value;
 if(dobValue){
-
-let parts = dobValue.split("-");
-
-showDob.innerHTML =
-parts[2] + "/" +
-parts[1] + "/" +
-parts[0];
-
-}
-
-showGender.innerHTML=gender.value;
-
-showPhone.innerHTML=phone.value;
-showEmail.innerHTML=email.value;
-showAddress.innerHTML=address.value;
-
-/* CAREER */
-
-if(careerSelect.value=="other"){
-
-showCareer.innerHTML=
-customCareer.value;
-
+let parts=dobValue.split("-");
+getEl("showDob").innerHTML=parts[2]+"/"+parts[1]+"/"+parts[0];
 }else{
-
-showCareer.innerHTML=
-careerSelect.value;
-
+getEl("showDob").innerHTML="";
 }
 
-/* DECLARATION */
 
-if(declarationSelect.value=="other"){
+getEl("showGender").innerHTML=getEl("gender").value;
+getEl("showPhone").innerHTML=getEl("phone").value;
+getEl("showEmail").innerHTML=getEl("email").value;
+getEl("showAddress").innerHTML=getEl("address").value;
 
-showDeclaration.innerHTML=
-customDeclaration.value;
 
+if(getEl("careerSelect").value=="other"){
+getEl("showCareer").innerHTML=getEl("customCareer").value;
 }else{
-
-showDeclaration.innerHTML=
-declarationSelect.value;
-
+getEl("showCareer").innerHTML=getEl("careerSelect").value;
 }
 
-/* SIGNATURE */
 
-document.getElementById("showSignature").innerHTML =
-document.getElementById("name").value;
+if(getEl("declarationSelect").value=="other"){
+getEl("showDeclaration").innerHTML=getEl("customDeclaration").value;
+}else{
+getEl("showDeclaration").innerHTML=getEl("declarationSelect").value;
+}
 
-/* REMOVE DELETE */
 
-showEducation.innerHTML=
-savedEducation.innerHTML
-.replace(/<button class="delete-btn".*?<\/button>/g,'');
+getEl("showSignature").innerHTML=getEl("fullName").value;
 
-showOther.innerHTML=
-savedOther.innerHTML
-.replace(/<button class="delete-btn".*?<\/button>/g,'');
 
-showExperience.innerHTML=
-savedExperience.innerHTML
-.replace(/<button class="delete-btn".*?<\/button>/g,'');
+getEl("showEducation").innerHTML=getEl("savedEducation").innerHTML.replace(/<button class="delete-btn".*?<\/button>/g,'');
+getEl("showOther").innerHTML=getEl("savedOther").innerHTML.replace(/<button class="delete-btn".*?<\/button>/g,'');
+getEl("showExperience").innerHTML=getEl("savedExperience").innerHTML.replace(/<button class="delete-btn".*?<\/button>/g,'');
 
-/* LANGUAGE */
 
 let languageHTML="";
-
-document.querySelectorAll(".languageCheck:checked")
-.forEach(function(lang){
-
-languageHTML +=
-`<li>${lang.value}</li>`;
-
+document.querySelectorAll(".languageCheck:checked").forEach(function(lang){
+languageHTML += `<li>${lang.value}</li>`;
 });
+getEl("showLanguage").innerHTML=languageHTML;
 
-showLanguage.innerHTML=languageHTML;
-/* SKILLS */
 
 let skillHTML="";
-
-savedSkills.querySelectorAll("b")
-.forEach(function(skill){
-
-skillHTML +=
-`<li>${skill.innerText}</li>`;
-
+getEl("savedSkills").querySelectorAll("b").forEach(function(skill){
+skillHTML += `<li>${skill.innerText}</li>`;
 });
+getEl("showSkills").innerHTML=skillHTML;
 
-showSkills.innerHTML=skillHTML;
 
-/* HIDE EMPTY */
+getEl("fatherRow").style.display=getEl("showFather").innerHTML.trim() ? "block" : "none";
+getEl("motherRow").style.display=getEl("showMother").innerHTML.trim() ? "block" : "none";
+getEl("dobRow").style.display=getEl("showDob").innerHTML.trim() ? "block" : "none";
+getEl("genderRow").style.display=getEl("showGender").innerHTML.trim() ? "block" : "none";
 
-careerSection.style.display=
-showCareer.innerHTML.trim()
-?"block":"none";
 
-educationSection.style.display=
-showEducation.innerHTML.trim()
-?"block":"none";
+let personalData=
+getEl("showFather").innerHTML.trim() ||
+getEl("showMother").innerHTML.trim() ||
+getEl("showDob").innerHTML.trim() ||
+getEl("showGender").innerHTML.trim();
 
-otherSection.style.display=
-showOther.innerHTML.trim()
-?"block":"none";
 
-experienceSection.style.display=
-showExperience.innerHTML.trim()
-?"block":"none";
+getEl("personalSection").style.display=personalData ? "block" : "none";
 
-languageSection.style.display=
-languageHTML.trim()
-?"block":"none";
 
-skillSection.style.display=
-skillHTML.trim()
-?"block":"none";
+getEl("phoneBlock").style.display=getEl("showPhone").innerHTML.trim() ? "block" : "none";
+getEl("emailBlock").style.display=getEl("showEmail").innerHTML.trim() ? "block" : "none";
+getEl("addressBlock").style.display=getEl("showAddress").innerHTML.trim() ? "block" : "none";
 
-declarationSection.style.display=
-showDeclaration.innerHTML.trim()
-?"block":"none";
 
-/* IMAGE */
+let contactData=
+getEl("showPhone").innerHTML.trim() ||
+getEl("showEmail").innerHTML.trim() ||
+getEl("showAddress").innerHTML.trim();
 
-let file=image.files[0];
 
+getEl("contactSection").style.display=contactData ? "block" : "none";
+getEl("careerSection").style.display=getEl("showCareer").innerHTML.trim() ? "block" : "none";
+getEl("educationSection").style.display=getEl("showEducation").textContent.trim() ? "block" : "none";
+
+/* FIXED HERE */
+getEl("showOther").innerHTML = getEl("savedOther").innerHTML.replace(/<button class="delete-btn".*?<\/button>/g,'').trim();
+getEl("otherSection").style.display = getEl("showOther").textContent.trim() ? "block" : "none";
+
+getEl("experienceSection").style.display=getEl("showExperience").innerHTML.trim() ? "block" : "none";
+getEl("languageSection").style.display=languageHTML.trim() ? "block" : "none";
+getEl("skillSection").style.display=skillHTML.trim() ? "block" : "none";
+getEl("declarationSection").style.display=getEl("showDeclaration").innerHTML.trim() ? "block" : "none";
+
+
+let file=getEl("image").files[0];
 if(file){
-
 let reader=new FileReader();
-
 reader.onload=function(e){
-
-showImage.src=e.target.result;
-
+getEl("showImage").src=e.target.result;
+getEl("showImage").style.display="block";
 }
-
 reader.readAsDataURL(file);
-
+}else{
+getEl("showImage").style.display="none";
 }
 
-window.scrollTo(
-0,
-document.body.scrollHeight
-);
 
+window.scrollTo(0,document.body.scrollHeight);
 }
 
-/* PRINT */
 
-function printResume(){
+function printResume(){ window.print(); }
 
-window.print();
 
-}
-
+updateHeadingColor();
 </script>
+
 
 </body>
 </html>
